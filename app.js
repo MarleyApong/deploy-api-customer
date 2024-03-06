@@ -36,11 +36,13 @@ const event = require('./routes/event')
 const app = express()
 
 // MANAGER REQUEST FOR CROSS ORIGN
-const corsOption = {
-    origin: '*',
-    allowedHeaders: ['Content-Type', 'Authorization', 'Access-Control-Allow-Headers'],
-}
-
+const corsOptions = {
+    origin: '*', // ou spécifiez les domaines autorisés
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes autorisées
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Access-Control-Allow-Headers', 'Access-Control-Max-Age'], // En-têtes autorisés
+    credentials: true, // Autoriser les cookies, si nécessaire
+    maxAge: 86400 // Durée maximale de mise en cache pour les réponses preflight (en secondes)
+  }
 app.use(cors(corsOption))
 
 // UPGRADE PROTECTION
