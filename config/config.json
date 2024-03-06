@@ -15,7 +15,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "adim",
+    "username": "admin",
     "password": "A2YfQ5qA",
     "database": "api_customer",
     "host": "mysql-165330-0.cloudclusters.net",
