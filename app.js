@@ -107,6 +107,4 @@ init()
 app.use(errorHandler)
 
 // SYNCHRONISATION
-app.listen(3000, () => {
-    console.log(`Server started at address [http://localhost:${process.env.SERVER_PORT || 4000}] !`)
-})
+app.listen(process.env.SERVER_PORT || 3000)

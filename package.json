@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "Marley Apong",
@@ -23,8 +23,5 @@
     "sequelize-cli": "^6.6.2",
     "sharp": "^0.33.2",
     "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
   }
 }
