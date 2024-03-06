@@ -1,0 +1,25 @@
+const sequelize = require('../config/db')
+const db = {}
+
+db.Answers = require('./answers')(sequelize)
+db.AnswersCustomers = require('./answersCustomers')(sequelize)
+db.Companies = require('./companies')(sequelize)
+db.Customers = require('./customers')(sequelize)
+db.Envs = require('./envs')(sequelize)
+db.LogsUsers = require('./logsUsers')(sequelize)
+db.Notifications = require('./notifications')(sequelize)
+db.Orders = require('./orders')(sequelize)
+db.OrdersProducts = require('./ordersProducts')(sequelize)
+db.Organizations = require('./organizations')(sequelize)
+db.Products = require('./products')(sequelize)
+db.Questions = require('./questions')(sequelize)
+db.QuestionsAnswers = require('./questionsAnswers')(sequelize)
+db.Roles = require('./roles')(sequelize)
+db.Status = require('./status')(sequelize)
+db.Surveys = require('./surveys')(sequelize)
+db.Tables = require('./tables')(sequelize)
+db.Users = require('./users')(sequelize)
+db.UsersCompanies = require('./usersCompanies')(sequelize)
+db.UsersOrganizations = require('./usersOrganizations')(sequelize)
+
+module.exports = db
