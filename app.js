@@ -44,7 +44,7 @@ const corsOptions = {
     // maxAge: 86400 // Durée maximale de mise en cache pour les réponses preflight (en secondes)
 }
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 // UPGRADE PROTECTION
 app.use(helmet({
