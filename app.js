@@ -43,7 +43,7 @@ const corsOptions = {
     credentials: true, // Autoriser les cookies, si nécessaire
     maxAge: 86400 // Durée maximale de mise en cache pour les réponses preflight (en secondes)
   }
-app.use(cors(corsOption))
+app.use(cors(corsOptions))
 
 // UPGRADE PROTECTION
 app.use(helmet({
