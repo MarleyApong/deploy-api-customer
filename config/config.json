@@ -15,10 +15,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "user-root",
-    "password": "Ek!1~eu4WbTw0fad",
-    "database": "api-customer",
-    "host": "127.0.0.1",
+    "username": "adim",
+    "password": "A2YfQ5qA",
+    "database": "api_customer",
+    "host": "mysql-165330-0.cloudclusters.net",
+    "port": "10014",
     "dialect": "mysql"
   }
 }
