@@ -52,7 +52,6 @@ app.use(helmet({
 // CONFIGURATION API && AUTHORIZATION
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(morgan('combined'))
 
 // STATIC IMAGES FOLDER
 app.use(express.static('public'))
