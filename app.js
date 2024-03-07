@@ -101,7 +101,9 @@ const createDirectoryIfNotExists = (directoryPath) => {
     }
 }
 
-// CREATE FOLDER 'public' IF NOT EXIST
+// CREATE FOLDER 'public', 'imgs', 'product' and 'profile' IF NOT EXIST
+createDirectoryIfNotExists('./public')
+createDirectoryIfNotExists('./public/imgs')
 createDirectoryIfNotExists('./public/imgs/product')
 createDirectoryIfNotExists('./public/imgs/profile')
 
