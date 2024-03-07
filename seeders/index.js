@@ -97,7 +97,8 @@ module.exports = async () => {
          console.log("===================User by defauld created !===================")
       }
       console.log("===================User already init !===================")
-   } catch (err) {
+   } 
+   catch (err) {
 
    }
 }

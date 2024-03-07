@@ -3,6 +3,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const sequelize = require('./config/db')
 const seedDB = require('./seeders')
+const fs = require('fs')
 require('./associations')
 
 
@@ -36,13 +37,13 @@ const event = require('./routes/event')
 const app = express()
 
 // MANAGER REQUEST FOR CROSS ORIGN
-const corsOptions = {
-    origin: '*', // ou spécifiez les domaines autorisés
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes autorisées
-    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'], // En-têtes autorisés
-    credentials: true, // Autoriser les cookies, si nécessaire
-    // maxAge: 86400 // Durée maximale de mise en cache pour les réponses preflight (en secondes)
-}
+// const corsOptions = {
+//     origin: '*', // ou spécifiez les domaines autorisés
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes autorisées
+//     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'], // En-têtes autorisés
+//     credentials: true, // Autoriser les cookies, si nécessaire
+//     // maxAge: 86400 // Durée maximale de mise en cache pour les réponses preflight (en secondes)
+// }
 
 app.use(cors())
 
@@ -89,6 +90,20 @@ app.use('/averages', averagesRouter)
 app.use((req, res, next) => {
     res.status(404).send("Fuck you !")
 })
+
+const createDirectoryIfNotExists = (directoryPath) => {
+    if (!fs.existsSync(directoryPath)) {
+        fs.mkdirSync(directoryPath)
+        console.log(`Directory '${directoryPath}' created successfully.`)
+    } 
+    else {
+        console.log(`Directory '${directoryPath}' already exists.`)
+    }
+}
+
+// CREATE FOLDER 'public' IF NOT EXIST
+createDirectoryIfNotExists('./public/product')
+createDirectoryIfNotExists('./public/profile')
 
 // SYNCHRONIZATION
 const init = async () => {
