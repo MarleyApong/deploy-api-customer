@@ -102,8 +102,8 @@ const createDirectoryIfNotExists = (directoryPath) => {
 }
 
 // CREATE FOLDER 'public' IF NOT EXIST
-createDirectoryIfNotExists('./public/product')
-createDirectoryIfNotExists('./public/profile')
+createDirectoryIfNotExists('./public/imgs/product')
+createDirectoryIfNotExists('./public/imgs/profile')
 
 // SYNCHRONIZATION
 const init = async () => {
